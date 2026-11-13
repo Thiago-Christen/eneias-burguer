@@ -1,0 +1,14 @@
+{
+  "name": "eneias-burguer-kit-digital",
+  "version": "0.7.0",
+  "private": true,
+  "description": "Prévia comercial modular para Enéias Burguer",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node --check dist/app.js",
+    "build:pages": "node scripts/build-pages.mjs"
+  },
+  "devDependencies": {
+    "qrcode": "1.5.4"
+  }
+}

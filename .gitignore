@@ -1,0 +1,9 @@
+node_modules/
+dist/
+pages-dist/
+src/assets/
+.env
+.env.*
+*.mp4
+*.tar.gz
+__pycache__/

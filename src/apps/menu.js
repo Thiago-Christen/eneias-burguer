@@ -1,0 +1,6 @@
+function menuView(){
+  const raw=params.get('mesa');
+  const table=/^\d{1,2}$/.test(raw||'')&&Number(raw)>0?String(Number(raw)).padStart(2,'0'):null;
+  const orderUrl=table?`/pedidos/?mesa=${table}`:'/pedidos/';
+  return `<div class="menu-standalone"><header class="menu-topbar"><a href="/" aria-label="Enéias Burguer, início">${brand()}</a><a class="ember-button" href="${orderUrl}">FAZER PEDIDO ${icon('arrow')}</a></header><section class="menu-welcome"><div><span class="tiny-label">${table?`BEM-VINDO À MESA ${table}`:'ENÉIAS BURGUER · PINHAIS'}</span><h1>O próximo favorito<br><em>está aqui.</em></h1><p>${table?'Explore o cardápio e, quando escolher, abra seu pedido identificado com esta mesa.':'Burgers, porções, combos e bebidas. Escolha pelo nome. Volte pelo sabor.'}</p></div><aside class="menu-access-qr"><img src="/assets/menu-qr.svg" alt="QR Code para abrir este cardápio digital"><div><span>CARDÁPIO DIGITAL</span><strong>Escaneie.<br>Escolha com calma.</strong><a href="/assets/menu-qr.svg" download="eneias-cardapio-qr.svg">Baixar QR Code ↗</a></div></aside></section><div class="ember-menu"><div class="container">${menuSection()}</div></div><footer class="menu-standalone-footer"><a href="/">← Conheça a casa</a><span>Valores do catálogo enviado · prévia com imagens de campanha por IA</span><a href="${orderUrl}">Ir para meu pedido ↗</a></footer></div>`;
+}
